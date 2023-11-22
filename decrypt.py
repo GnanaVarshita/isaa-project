@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     decrypt_files(folder)
 """
-
+""""
 import os
 
 def combine_files(folder, output_filename):
@@ -36,3 +36,18 @@ if __name__ == '__main__':
     combine_files(folder, output_filename)
 
 
+"""
+
+import os
+
+def combine_files(file_paths, output_filename):
+    with open(output_filename, 'wb') as output_file:
+        for file_path in file_paths:
+            with open(file_path, 'rb') as input_file:
+                output_file.write(input_file.read())
+
+if __name__ == '__main__':
+    file_paths = ['1.enc', '2.enc','3.enc','4.enc']
+    output_filename = 'combined_file.txt'
+
+    combine_files(file_paths, output_filename)

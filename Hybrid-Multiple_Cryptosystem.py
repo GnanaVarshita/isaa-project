@@ -13,7 +13,7 @@ def keys():
 #input
 
 # Specify the path to the input file
-file_path = "input_part2.enc"
+file_path = "input_part4.enc"
 
 # Initialize an empty variable to store the content of the file
 file_content = ""
@@ -60,8 +60,8 @@ def decrypt():
     cipherAESd=AES.new(dicipheredkey,AES.MODE_GCM,nonce=nonce)
     decrypted=cipherAESd.decrypt(dec).decode("utf-8")
     print("\ndecrypted message by aes:",decrypted)
-    with open("one.enc", "w", encoding="utf-8") as file:
+    with open("4.enc", "w", encoding="utf-8") as file:
         file.write(decrypted)
-        print("Decrypted text saved to 'one.enc'.")
+        print("Decrypted text saved to '4.enc'.")
 encrypt()
 decrypt()
